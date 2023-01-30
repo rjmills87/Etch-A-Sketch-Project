@@ -17,11 +17,25 @@ body {
   grid-auto-rows: 35px;
 }
 
+.grid-selectors {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 25px;
+}
+
 .gridCell {
-  background-color: lightslategray;
   border-style: solid;
 }
 
 .gridCell:hover {
   background-color: crimson;
+}
+
+.clear-btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 25px;
 }

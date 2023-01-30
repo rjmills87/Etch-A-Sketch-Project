@@ -1,11 +1,16 @@
 const gridContainer = document.querySelector(".grid-container");
-const grid16by16 = 16 * 16;
+const gridLayoutSizes = [16 * 16, 24 * 24, 32 * 32];
 
-function createGrid(size) {
-  for (let cell = 0; cell < size; cell++) {
-    let gridCell = document.createElement("div");
-    gridCell.classList.add("gridCell");
-    gridContainer.appendChild(gridCell);
-  }
+for (let cell = 0; cell < gridLayoutSizes[0]; cell++) {
+  let gridCell = document.createElement("div");
+  gridCell.classList.add("gridCell");
+  gridContainer.appendChild(gridCell);
+  gridCell.addEventListener("mouseover", function () {
+    gridCell.style.backgroundColor = "blue";
+  });
+
+  const clearBtn = document.querySelector("#clear-btn");
+  clearBtn.addEventListener("click", function () {
+    gridCell.style.backgroundColor = "white";
+  });
 }
-createGrid(grid16by16);
