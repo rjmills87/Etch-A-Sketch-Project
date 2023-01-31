@@ -10,10 +10,27 @@ body {
   margin-bottom: 50px;
 }
 
-.grid-container {
+.grid16 {
+  display: grid;
   justify-content: center;
   display: grid;
   grid-template-columns: repeat(16, 35px);
+  grid-auto-rows: 35px;
+}
+
+.grid24 {
+  display: grid;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(24, 35px);
+  grid-auto-rows: 35px;
+}
+
+.grid32 {
+  display: grid;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(32, 35px);
   grid-auto-rows: 35px;
 }
 
@@ -25,12 +42,11 @@ body {
   margin-bottom: 25px;
 }
 
-.gridCell {
+.gridCell16,
+.gridCell24,
+.gridCell32 {
   border-style: solid;
-}
-
-.gridCell:hover {
-  background-color: crimson;
+  border-color: black;
 }
 
 .clear-btn-container {
