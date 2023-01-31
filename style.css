@@ -10,6 +10,12 @@ body {
   margin-bottom: 50px;
 }
 
+.main-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 .grid16 {
   display: grid;
   justify-content: center;
@@ -36,6 +42,7 @@ body {
 
 .grid-selectors {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 30px;

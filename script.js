@@ -56,7 +56,6 @@ function createGrid32() {
     gridCell.addEventListener("mouseover", function () {
       gridCell.style.backgroundColor = "green";
     });
-
     clearBtn.addEventListener("click", function () {
       gridCell.style.backgroundColor = "white";
     });
