@@ -1,21 +1,23 @@
+const gridLayoutSizes = [16 * 16, 24 * 24, 32 * 32];
 const gridContainer = document.querySelector(".grid-container");
 const grid16 = document.createElement("div");
 const grid24 = document.createElement("div");
 const grid32 = document.createElement("div");
-const gridLayoutSizes = [16 * 16, 24 * 24, 32 * 32];
-let previousGrid;
-
 const btn16 = document.querySelector(".sixteen-btn");
 const btn24 = document.querySelector(".twentyfour-btn");
 const btn32 = document.querySelector(".thirtytwo-btn");
+const colorPicker = document.querySelector("#color-pick");
 const clearBtn = document.querySelector("#clear-btn");
+let previousGrid;
+
+//Functions to create different size grids
 
 function createGrid16() {
   if (previousGrid) {
     gridContainer.removeChild(previousGrid);
   }
-  previousGrid = grid16;
 
+  previousGrid = grid16;
   grid16.classList.add("grid16");
   gridContainer.appendChild(grid16);
 
@@ -32,13 +34,15 @@ function createGrid16() {
     });
   }
 }
+createGrid16();
+btn16.disabled = true;
 
 function createGrid24() {
   if (previousGrid) {
     gridContainer.removeChild(previousGrid);
   }
-  previousGrid = grid24;
 
+  previousGrid = grid24;
   grid24.classList.add("grid24");
   gridContainer.appendChild(grid24);
 
@@ -47,7 +51,7 @@ function createGrid24() {
     gridCell.classList.add("gridCell");
     grid24.appendChild(gridCell);
     gridCell.addEventListener("mouseover", function () {
-      gridCell.style.backgroundColor = "pink";
+      gridCell.style.backgroundColor = "blue";
     });
 
     clearBtn.addEventListener("click", function () {
@@ -60,8 +64,8 @@ function createGrid32() {
   if (previousGrid) {
     gridContainer.removeChild(previousGrid);
   }
-  previousGrid = grid32;
 
+  previousGrid = grid32;
   grid32.classList.add("grid32");
   gridContainer.appendChild(grid32);
 
@@ -70,7 +74,7 @@ function createGrid32() {
     gridCell.classList.add("gridCell");
     grid32.appendChild(gridCell);
     gridCell.addEventListener("mouseover", function () {
-      gridCell.style.backgroundColor = "red";
+      gridCell.style.backgroundColor = "purple";
     });
     clearBtn.addEventListener("click", function () {
       gridCell.style.backgroundColor = "white";
@@ -78,20 +82,31 @@ function createGrid32() {
   }
 }
 
+//Selection Buttons
+
 btn16.addEventListener("click", () => {
   createGrid16();
   grid24.textContent = "";
   grid32.textContent = "";
+  btn16.disabled = true;
+  btn24.disabled = false;
+  btn32.disabled = false;
 });
 
 btn24.addEventListener("click", () => {
   createGrid24();
   grid16.textContent = "";
   grid32.textContent = "";
+  btn16.disabled = false;
+  btn24.disabled = true;
+  btn32.disabled = false;
 });
 
 btn32.addEventListener("click", () => {
   createGrid32();
   grid16.textContent = "";
   grid24.textContent = "";
+  btn16.disabled = false;
+  btn24.disabled = false;
+  btn32.disabled = true;
 });
