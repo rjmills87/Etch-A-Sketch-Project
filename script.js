@@ -6,7 +6,7 @@ const grid32 = document.createElement("div");
 const btn16 = document.querySelector(".sixteen-btn");
 const btn24 = document.querySelector(".twentyfour-btn");
 const btn32 = document.querySelector(".thirtytwo-btn");
-const colorPicker = document.querySelector("#color-pick");
+const colorPicker = document.getElementById("color-pick");
 const clearBtn = document.querySelector("#clear-btn");
 let previousGrid;
 
@@ -26,7 +26,7 @@ function createGrid16() {
     gridCell.classList.add("gridCell");
     grid16.appendChild(gridCell);
     gridCell.addEventListener("mouseover", function () {
-      gridCell.style.backgroundColor = "orange";
+      gridCell.style.backgroundColor = colorPicker.value;
     });
 
     clearBtn.addEventListener("click", function () {
@@ -51,7 +51,7 @@ function createGrid24() {
     gridCell.classList.add("gridCell");
     grid24.appendChild(gridCell);
     gridCell.addEventListener("mouseover", function () {
-      gridCell.style.backgroundColor = "blue";
+      gridCell.style.backgroundColor = colorPicker.value;
     });
 
     clearBtn.addEventListener("click", function () {
@@ -74,7 +74,7 @@ function createGrid32() {
     gridCell.classList.add("gridCell");
     grid32.appendChild(gridCell);
     gridCell.addEventListener("mouseover", function () {
-      gridCell.style.backgroundColor = "purple";
+      gridCell.style.backgroundColor = colorPicker.value;
     });
     clearBtn.addEventListener("click", function () {
       gridCell.style.backgroundColor = "white";
