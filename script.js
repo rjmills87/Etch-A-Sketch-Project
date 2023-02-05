@@ -1,24 +1,25 @@
 const gridLayoutSizes = [16 * 16, 24 * 24, 32 * 32, 64 * 64];
 const gridContainer = document.querySelector(".grid-container");
+
 const grid16 = document.createElement("div");
 const grid24 = document.createElement("div");
 const grid32 = document.createElement("div");
 const grid64 = document.createElement("div");
+
 const btn16 = document.querySelector(".sixteen-btn");
 const btn24 = document.querySelector(".twentyfour-btn");
 const btn32 = document.querySelector(".thirtytwo-btn");
 const btn64 = document.querySelector(".sixtyfour-btn");
-const colorPicker = document.getElementById("color-pick");
 const clearBtn = document.querySelector(".clear-btn");
+const colorPicker = document.getElementById("color-pick");
+
 let previousGrid;
 
 //Functions to create different size grids
-
 function createGrid16() {
   if (previousGrid) {
     gridContainer.removeChild(previousGrid);
   }
-
   previousGrid = grid16;
   grid16.classList.add("grid16");
   gridContainer.appendChild(grid16);
@@ -43,7 +44,6 @@ function createGrid24() {
   if (previousGrid) {
     gridContainer.removeChild(previousGrid);
   }
-
   previousGrid = grid24;
   grid24.classList.add("grid24");
   gridContainer.appendChild(grid24);
@@ -66,7 +66,6 @@ function createGrid32() {
   if (previousGrid) {
     gridContainer.removeChild(previousGrid);
   }
-
   previousGrid = grid32;
   grid32.classList.add("grid32");
   gridContainer.appendChild(grid32);
@@ -88,7 +87,6 @@ function createGrid64() {
   if (previousGrid) {
     gridContainer.removeChild(previousGrid);
   }
-
   previousGrid = grid64;
   grid64.classList.add("grid64");
   gridContainer.appendChild(grid64);
@@ -107,7 +105,6 @@ function createGrid64() {
 }
 
 //Selection Buttons
-
 btn16.addEventListener("click", () => {
   createGrid16();
   grid24.textContent = "";
@@ -151,9 +148,3 @@ btn64.addEventListener("click", () => {
   btn32.disabled = false;
   btn64.disabled = true;
 });
-
-// eraserBtn.addEventListener("click", () => {
-//   gridCell.addEventListener("mousedown", function () {
-//     gridCell.style.backgroundColor = "white";
-//   });
-// })
